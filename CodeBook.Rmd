@@ -1,0 +1,50 @@
+---
+title: "Codebook for 'Average of Mean and Standard Deviation of Activity Measurement' Dataset"
+output: html_document
+---
+
+```{r, echo=FALSE}
+d <- Sys.Date()
+```
+**Date Created:** `r d`
+
+Codebook prepared by Sandhya Raghavan based on a tidy dataset created for Average of Activity measurment. The dataset was prepared by cleansing the data collected from the accelerometers from the Samsung Galaxy S smartphone.
+
+Below is the link to the ReadMe file of the cleansing procedure followed.
+## ADD LINK HERE
+
+The **Average_of_Mean_and_STD_of_Activity_Measurment.txt** contains total of 180 records for 30 subjects (identified by subject_id) across 6 differnet Activities.The activities are as follows:
+
+```{r, echo=FALSE}
+act  <- paste(c("WALKING","WALKING_UPSTAIRS","WALKING_DOWNSTAIRS","SITTING","STANDING","LAYING"),sep = "\n")
+```
+`r act`
+
+Below is the definition for the other variables in the dataset:
+
+```{r , echo=FALSE}
+data <- read.csv("data/Average_of_Activity_Measurment.csv")
+code_book <- data.frame(Variable_Name=c(names(data)))
+st <- sapply(data,class)
+code_book$Variable_Type <- st[code_book$Variable_Name]
+code_book$Unit_of_Measurment <-  c("HZ")
+code_book[c(1,2),3] <- c("N/A")
+code_book$Column_Position <- seq(along=code_book$Variable_Name)
+library(knitr)
+kable(code_book)
+```
+
+## Appendix
+
+R Snippet used to create code book is below
+```{r , results="hide"}
+## Stored onemore tidy data set as csv just for convenience
+data <- read.csv("data/Average_of_Activity_Measurment.csv")
+code_book <- data.frame(Variable_Name=c(names(data)))
+st <- sapply(data,class)
+code_book$Variable_Type <- st[code_book$Variable_Name]
+##code_book$Variable_Description <-  code_book$Variable_Name
+code_book$Column_Position <- seq(along=code_book$Variable_Name)
+library(knitr)
+kable(code_book)
+```
