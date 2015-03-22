@@ -56,10 +56,18 @@ Steps performed:
 
 ##R Code wriiten for analysis
 
-The R program written for this analysis is [run_analysis.R].
+The R program written for this analysis is run_analysis.R. The below github repository has this R code.
+
+https://github.com/raghavansandhya/GettingDataCourseProject
 
 ##Tidy Dataset
 
 The **Average_of_Mean_and_STD_of_Activity_Measurment.txt** contains total of 180 records for 30 subjects (identified by subject_id) across 6 differnet Activities
 
-
+The below code can be used to read the file
+```{r}
+address <- "https://s3.amazonaws.com/coursera-uploads/user-cbeaad4d21ae53c8cdfff2cf/973499/asst-3/bf7a9770d0e811e4a96783b307f25cb6.txt"
+address <- sub("^https", "http", address)
+data <- read.table(url(address), header = TRUE)
+View(data)
+```

@@ -10,8 +10,9 @@ d <- Sys.Date()
 
 Codebook prepared by Sandhya Raghavan based on a tidy dataset created for Average of Activity measurment. The dataset was prepared by cleansing the data collected from the accelerometers from the Samsung Galaxy S smartphone.
 
-Below is the link to the ReadMe file of the cleansing procedure followed.
-## ADD LINK HERE
+There is also a ReadMe file available in the below repository for information on how he tidy data was prepared
+
+https://github.com/raghavansandhya/GettingDataCourseProject
 
 The **Average_of_Mean_and_STD_of_Activity_Measurment.txt** contains total of 180 records for 30 subjects (identified by subject_id) across 6 differnet Activities.The activities are as follows:
 
